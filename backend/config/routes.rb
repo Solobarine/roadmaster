@@ -12,5 +12,11 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  devise_for :customers, controllers: {
+    sessions: 'customers/sessions',
+    registrations: 'customers/registrations'
+  }
+
   get 'users/current_user', to: 'users/current_user#index'
+  get 'customers/current_customer', to: 'customers/current_customer#index'
 end

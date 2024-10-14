@@ -312,7 +312,9 @@ Devise.setup do |config|
   # config.sign_in_after_change_password = true
   config.warden do |manager|
     manager.scope_defaults :user, store: false
+    manager.scope_defaults :customer, store: false
     manager.failure_app = Users::FailureApp
+    manager.failure_app = Customers::FailureApp
   end
 
   config.jwt do |jwt|
