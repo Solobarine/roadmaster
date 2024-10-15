@@ -13,5 +13,5 @@ class Customer < ApplicationRecord
   validates :address, presence: true, on: :account_update
   validates :city, presence: true, on: :account_update
   validates :state, presence: true, on: :account_update
-  validates :zip_code, presence: true, length: { is: 6 }, on: :account_update
+  validates :zip_code, presence: true, on: :account_update
 end
