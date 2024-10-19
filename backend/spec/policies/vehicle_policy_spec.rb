@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe ModelPolicy, type: :policy do
+RSpec.describe VehiclePolicy, type: :policy do
   let(:user) { User.new }
-  let(:brand) { Brand.new }
+  let(:vehicle) { Vehicle.new }
   let(:other_entity) { double('OtherEntity') }
-  let(:policy) { described_class.new(entity, brand) }
+  let(:policy) { described_class.new(entity, vehicle) }
 
   describe '#create?' do
     context 'when the entity is a User' do
