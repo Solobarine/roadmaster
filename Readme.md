@@ -8,7 +8,7 @@ The Application provides a seamless way for car dealerships to add, update, and 
 
 The Project is divided into the following sections:
 
-- **API:** Click [here]('./backend/README.md') to view the API Docs.
+- **API:** Click [here](backend/README.md) to view the API Docs.
 - **Customer / Admin Portal:** Coming soon
 
 ## Key Highlights:
