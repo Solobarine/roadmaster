@@ -8,10 +8,6 @@ Rails.application.routes.draw do
       patch :update, on: :member
     end
 
-    resources :models, except: %w[edit new update] do
-      patch :update, on: :member
-    end
-
     resources :vehicles, except: %w[edit new update] do
       patch :update, on: :member
     end
