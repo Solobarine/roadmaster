@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  resources :manufacturers
+  scope '/api' do
+    resources :brands, except: %w[edit new update] do
+      patch :update, on: :member
+    end
+
+    resources :manufacturers, except: %w[edit new update] do
+      patch :update, on: :member
+    end
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -8,16 +16,18 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
-  }
+  scope '/api' do
+    devise_for :users, controllers: {
+      sessions: 'users/sessions',
+      registrations: 'users/registrations'
+    }
 
-  devise_for :customers, controllers: {
-    sessions: 'customers/sessions',
-    registrations: 'customers/registrations'
-  }
+    devise_for :customers, controllers: {
+      sessions: 'customers/sessions',
+      registrations: 'customers/registrations'
+    }
 
-  get 'users/current_user', to: 'users/current_user#index'
-  get 'customers/current_customer', to: 'customers/current_customer#index'
+    get 'users/current_user', to: 'users/current_user#index'
+    get 'customers/current_customer', to: 'customers/current_customer#index'
+  end
 end

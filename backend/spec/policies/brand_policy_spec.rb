@@ -1,10 +1,10 @@
-require 'spec_helper'
+require 'rails_helper'
 
-RSpec.describe ManufacturerPolicy, type: :policy do
+RSpec.describe BrandPolicy, type: :policy do
   let(:user) { User.new }
-  let(:manufacturer) { Manufacturer.new }
+  let(:brand) { Brand.new }
   let(:other_entity) { double('OtherEntity') }
-  let(:policy) { described_class.new(entity, manufacturer) }
+  let(:policy) { described_class.new(entity, brand) }
 
   describe '#create?' do
     context 'when the entity is a User' do
