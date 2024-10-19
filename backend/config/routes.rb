@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   scope '/api' do
+    resources :manufacturers, except: %w[edit new update] do
+      patch :update, on: :member
+    end
+
     resources :brands, except: %w[edit new update] do
       patch :update, on: :member
     end
 
-    resources :manufacturers, except: %w[edit new update] do
+    resources :models, except: %w[edit new update] do
       patch :update, on: :member
     end
   end
