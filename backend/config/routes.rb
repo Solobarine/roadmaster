@@ -11,6 +11,10 @@ Rails.application.routes.draw do
     resources :models, except: %w[edit new update] do
       patch :update, on: :member
     end
+
+    resources :vehicles, except: %w[edit new update] do
+      patch :update, on: :member
+    end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
