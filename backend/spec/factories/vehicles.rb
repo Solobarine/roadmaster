@@ -38,6 +38,6 @@ FactoryBot.define do
       )
     end
 
-    association :model
+    association :brand
   end
 end
