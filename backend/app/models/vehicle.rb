@@ -43,4 +43,5 @@ class Vehicle < ApplicationRecord
   validates :msrp, presence: true, numericality: true
 
   belongs_to :brand
+  has_many_attached :images
 end
