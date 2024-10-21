@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_10_19_122524) do
+ActiveRecord::Schema[7.1].define(version: 2024_10_20_110602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -78,6 +78,16 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_19_122524) do
     t.integer "founded_year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "customer_id", null: false
+    t.integer "rating"
+    t.string "title"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_reviews_on_customer_id"
   end
 
   create_table "test_drives", force: :cascade do |t|
@@ -150,6 +160,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_19_122524) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "brands", "manufacturers"
+  add_foreign_key "reviews", "customers"
   add_foreign_key "test_drives", "customers"
   add_foreign_key "test_drives", "vehicles"
   add_foreign_key "vehicles", "brands"
