@@ -10,7 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/color-mode": "^3.5.2",
+    "@nuxtjs/tailwindcss": "^6.13.2",
+    "lucide-vue-next": "^0.483.0",
     "nuxt": "^3.16.0",
+    "nuxt-svgo": "^4.0.16",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   }
